@@ -137,10 +137,11 @@ public class MediaPlayerUtils {
     /**
      * 转换秒为 02.03'04"格式
      *
-     * @param seconds 秒
+     * @param totalSeconds 秒
      * @return 02.03'04"格式 或 03'04"
      */
-    public static String formatSeconds(int seconds) {
+    public static String formatSeconds(int totalSeconds) {
+        int seconds = totalSeconds % 60;
         int minutes = (seconds / 60) % 60;
         int hours = seconds / 3600;
         if (hours > 0) {
